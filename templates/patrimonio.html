@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/cobros-pagos.css">
+</head>
+<body>
+    <div class="container-login">
+        <div class="container-nav">
+            <a href="/main"><img src="/static/imagen/arcasens.jpg" alt="ARCASENS"></a>
+            <h1>Patrimonio</h1>
+        </div>
+        <div class="container_patrimonio" id="data">
+            <div class="activos" id="info_patrimonio">
+                <h1>Activos Totales</h1>
+                <label>ACTIVOS NO CORRIENTES</label><br>
+                {{ tesoreria['Activos no corrientes']|round(2) }} €<br><br>
+                <label>CUENTAS POR COBRAR</label><br>
+                {{ cobros|round(2) }} €<br><br>
+                <h2>Diponible</h2>
+                <label>Existencias</label><br>
+                {{ tipo_concepto["corto_plazo"] }} €<br><br>
+                <label>Efectivo</label><br>
+                {{ tesoreria['Efectivo']|round(2) }} €<br><br>
+                <label>Criptomonedas</label><br>
+                {{ tesoreria['Bitcoin']|round(2) }} €<br><br>
+                <label>Tarjetas</label><br>
+                {{ tesoreria['Tarjetas']|round(2) }} € <br><br>
+                <label>Total</label>
+                {{ tesoreria['Tarjetas'] + tesoreria['Bitcoin'] + tesoreria['Efectivo']+ cobros + tesoreria['Activos no corrientes'] + tipo_concepto["corto_plazo"] }} €
+
+            </div>
+            <div class="pasivos">
+                <h1>Pasivos Totales</h1>
+                <label>Fondos propios</label><br>
+                {{ tipo_concepto["Fondos_propios"] }} €<br><br>
+                <label>Deudas largo plazo</label><br>
+                {{ tipo_concepto["largo_plazo"] }} €<br><br>
+                <label>Deudas a corto plazo</label><br>
+                {{ tipo_concepto["corto_plazo"] }} €<br><br>
+
+                <label>MASA PATRIMONIAL</label><br>
+                Total: {{ tipo_concepto["Fondos_propios"] + tipo_concepto["largo_plazo"] + tipo_concepto["corto_plazo"] }} €
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

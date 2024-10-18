@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/cobros-pagos.css" />
+    <link rel="stylesheet" href="/static/formParcelas.css">
+  </head>
+  <body>
+    <div class="container-main">
+       <div class="container-nav">
+         <a href="/main"><img src="/static/imagen/arcasens.jpg" alt="" /></a>
+         <h1>Información</h1>
+       </div>
+       <div class="container-table">
+           {% for i in lista_explotaciones %}
+           <section id="formparcelas">
+               <form action="/editar/7/{{i.id}}" method="post" class="form">
+                      <fieldset>
+
+
+                          <h4>Saldo actual: {{i.importe}} €</h4>
+
+                          <h4>Abono a capital:</h4>
+                          <input type="number" name="importe" step="0.01" min="0" placeholder="importe" required>
+                          <h4>Medio de ingreso:</h4>
+                          <select name="descripcion" id="select_entrada" required>
+                             <option value="Tarjetas">Tarjeta</option>
+                             <option value="Activos">Activos</option>
+                             <option value="Efectivo">Efectivo</option>
+                             <option value="Bitcoin">Bitcoin</option>
+                          </select>
+
+                          <button type="submit">Guardar</button>
+                      </fieldset>
+               </form>
+           </section>
+           {%endfor%}
+       </div>
+    </div>
+  </body>
+  <script src="/static/script.js"></script>
+</html>

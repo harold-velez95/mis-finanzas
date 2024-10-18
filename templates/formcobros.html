@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/info.css">
+    <link rel="stylesheet" href="/static/cobros-pagos.css">
+    <link rel="stylesheet" href="/static/formParcelas.css">
+    
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-nav">
+           <a href="/main"><img src="/static/imagen/arcasens.jpg" alt=""></a>
+           <h1>Formulario cobros</h1>
+        </div>
+        <div class="container-table">
+            <section id="formparcelas">
+                  <form action="/crear/7" method="post" class="form">
+                      <fieldset>
+                          <h4>Fecha:</h4>
+                          <input type="date" name="fecha" placeholder="fecha" required>
+
+                          <h4>Nombre:</h4>
+                          <input type="text" name="nombre" placeholder="Nombre de la persona" required>
+
+                          <h4>Concepto:</h4>
+                          <select name="concepto" id="select_ingreso" required>
+                              <option value="Acreedores">Acreedores</option>
+                              <option value="Préstamo">Préstamo</option>
+                              <option value="Inversiones">Inversionista</option>
+
+                          </select>
+
+                          <h4>Importe:</h4>
+                          <input type="number" name="importe" min="0" step="0.01" placeholder="importe" required>
+
+                          <button type="submit">añadir</button>
+                      </fieldset>
+                  </form>
+            </section>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

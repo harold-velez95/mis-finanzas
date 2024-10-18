@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/info.css">
+    <link rel="stylesheet" href="/static/cobros-pagos.css">
+    <link rel="stylesheet" href="/static/formParcelas.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-nav">
+           <a href="/main"><img src="/static/imagen/arcasens.jpg" alt=""></a>
+           <h1>Formulario Tesorería</h1>
+        </div>
+        <div class="container-table">
+           <section id="formparcelas">
+               <form action="/crear/5" method="post" class="form">
+                   <fieldset>
+                       <legend>Tipo de registro</legend>
+                       <input type="radio" name="tiporegistro" value="entrada" id="entrada" onclick="entradas()" checked><span>entrada</span>
+                       <input type="radio" name="tiporegistro" value="salida" id="salida" onclick="entradas()"><span>salida</span>
+                       <br>
+                   </fieldset>
+                   <br>
+                   <br>
+                   <fieldset>
+                       <legend>Información</legend>
+                       <h4>Fecha</h4>
+                       <input type="date" name="fecha" placeholder="fecha" required>
+                       <div id="entradas">
+                          <h4>Medio de ingreso</h4>
+                          <select name="descripcion" id="select_entrada" required>
+                             <option value="Tarjetas">Tarjeta</option>
+                             <option value="Efectivo">Efectivo</option>
+                             <option value="Bitcoin">Bitcoin</option>
+                          </select>
+                           <h4>Concepto</h4>
+                          <select name="concepto" id="select_ingreso" required>
+                              <option value="Ventas">Ventas</option>
+                              <option value="Entrada extraordinaria">Entrada extraordinaria</option>
+
+                          </select>
+                       </div>
+                       <div id="salidas" style="display:none">
+                           <h4>Medio de pago</h4>
+                           <select name="descripcion" id="select_descripcion" disabled required>
+                               <option value="Tarjetas">Tarjeta</option>
+                               <option value="Efectivo">Efectivo</option>
+                               <option value="Bitcoin">Bitcoin</option>
+                           </select>
+                           <h4>Concepto</h4>
+                           <select name="concepto" id="select_concepto" disabled required>
+                                <option value="Mercadona">Mercadona</option>
+                                <option value="Consum">Consum</option>
+                                <option value="Ecopack">Ecopack</option>
+                               <option value="Servicios">Servicios</option>
+                                <option value="Transporte">Transporte</option>
+                               <option value="Arriendo">Arriendo</option>
+                                <option value="Nómina">Nómina</option>
+                                <option value="Gestoría">Gestoría</option>
+                                <option value="Impuestos">Impuestos</option>
+                               <option value="Cuota de autónomo">Cuota de autónomo</option>
+                               <option value="Activos no corrientes">Compra activos no corrientes</option>
+                           </select>
+                       </div>
+                       <h4>Importe</h4>
+                       <input type="number" name="importe" step="0.01" min="0" placeholder="importe" required>
+                       <button type="submit">Crear</button>
+                   </fieldset>
+               </form>
+           </section>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

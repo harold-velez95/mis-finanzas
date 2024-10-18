@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/resultados.css">
+</head>
+<body>
+    <div class="container-nav">
+        <a href="/main"><img src="/static/imagen/arcasens.jpg" alt=""></a>
+        <h1>Estado de resultados</h1>
+    </div>
+    <div class="resultado">
+        <form id="graficoForm" method="post">
+            <label for="month">Mes:</label>
+            <select name="month" id="month">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+            <button type="submit">Generar Datos</button>
+        </form>
+        <div class="container_info">
+             <!-- Mostrar los datos financieros obtenidos -->
+             {% if datos_financieros %}
+             <div class="info-content">
+                <h2>Datos Financieros</h2><br>
+                <p><strong>Ventas Totales:</strong> {{ datos_financieros['ventas_totales'] }}</p>
+                <p><strong>Gastos Totales:</strong> {{ datos_financieros['gastos_totales'] }}</p>
+                <p><strong>Margen:</strong> {{ datos_financieros['margen'] }}</p>
+                <p><strong>Otras Entradas:</strong> {{ datos_financieros['otras_entradas'] }}</p>
+                <p><strong>Nómina:</strong> {{ datos_financieros['nomina'] }}</p>
+                <p><strong>Servicios:</strong> {{ datos_financieros['servicios'] }}</p>
+                <p><strong>Transporte:</strong> {{ datos_financieros['transporte'] }}</p>
+                <p><strong>Arriendo:</strong> {{ datos_financieros['Arriendo'] }}</p>
+                <p><strong>BAI (Beneficio Antes de Impuestos):</strong> {{ datos_financieros['bai'] }}</p>
+                <p><strong>Gestoría:</strong> {{ datos_financieros['gestoria'] }}</p>
+                <p><strong>Autónomo:</strong> {{ datos_financieros['autonomo'] }}</p>
+                <p><strong>Impuestos:</strong> {{ datos_financieros['impuestos'] }}</p>
+                <p><strong>Margen Neto:</strong> {{ datos_financieros['margen_neto'] }}</p>
+             </div>
+            <div>
+               <h3>Generar Reporte</h3>
+                <a href="{{ url_for('generate_report', mes=request.form.get('month')) }}" class="btn">Descargar Reporte</a>
+            </div>
+             {% else %}
+               <p>No hay datos para mostrar.</p>
+             {% endif %}
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>

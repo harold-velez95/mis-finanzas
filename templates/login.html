@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/cobros-pagos.css">
+    <link rel="stylesheet" href="/static/formParcelas.css">
+    <style>
+        .alert {
+            padding: 15px;
+            background-color: #f44336; /* Red */
+            color: white;
+            margin-bottom: 15px;
+            opacity: 1;
+            transition: opacity 0.6s;
+        }
+
+        .alert.success {background-color: #4CAF50;} /* Green */
+        .alert.info {background-color: #2196F3;} /* Blue */
+        .alert.warning {background-color: #ff9800;} /* Orange */
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-login">
+        <div class="container-nav">
+           <a href="/main"><img src="/static/imagen/arcasens.jpg" alt=""></a>
+
+        </div>
+        <div class="container-table" style="min-width:70%;">
+            <h1>Login</h1>
+            <section id="formparcelas">
+                <form method="POST" class="form" style="text-align:center;">
+                    <fieldset>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" required><br>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required><br>
+                        <button type="submit">Login</button>
+                    </fieldset>
+                </form>
+            </section>
+            <a href="{{ url_for('register') }}">¿No tienes una cuenta? regístrate.</a>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'login_error' %}
+                            <div class="alert">{{ message }}</div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var alerts = document.getElementsByClassName('alert');
+            for (var i = 0; i < alerts.length; i++) {
+                setTimeout((function(index) {
+                    return function() {
+                        alerts[index].style.opacity = '0';
+                        setTimeout(function() { alerts[index].style.display = 'none'; }, 600);
+                    };
+                })(i), 3000); // El tiempo aquí es en milisegundos (3000ms = 3s)
+            }
+        };
+    </script>
+</body>
+</html>

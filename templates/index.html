@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/style-index.css">
+    <link rel="shortcut icon" href="/static/imagen/arcasens.jpg" type="image/x-icon">
+    <style>
+        .card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-nav">
+           <a href="/main"><img src="/static/imagen/arcasens.jpg" alt=""></a>
+           <h1>Mis finanzas</h1>
+           <a href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="gray" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+</svg></a>
+        </div>
+        <div class="container-cards">
+                <a href="/cobros">
+                <div class="card">
+                    <h3>cuentas por cobrar</h3>
+                    <img src="../static/imagen/cc.jpg" alt="">
+                </div>
+                </a>
+                <a href="/pagos">
+                <div class="card">
+                  <h3>cuentas por pagar</h3>
+                  <img src="../static/imagen/cp.png" alt="">
+                </div>
+                </a>
+                <a href="/tesoreria">
+                <div class="card">
+                    <h3>tesoreria</h3>
+                    <img src="../static/imagen/ts.png" alt="">
+                </div>
+                </a>
+                <a href="/resultados">
+                <div class="card">
+                    <h3>estado de resultados</h3>
+                    <img src="../static/imagen/inventario.jpg" alt="">
+                </div>
+                </a>
+                <a href="/patrimonio">
+                <div class="card">
+                    <h3>patrimonio</h3>
+                    <img src="../static/imagen/patr.jpg" alt="">
+                </div>
+                </a>
+        </div>
+    </div>
+</body>
+</html>

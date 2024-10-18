@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ARCASENS</title>
+    <link rel="stylesheet" href="/static/cobros-pagos.css" />
+    <link rel="stylesheet" href="/static/formParcelas.css">
+  </head>
+  <body>
+    <div class="container-main">
+       <div class="container-nav">
+         <a href="/main"><img src="/static/imagen/arcasens.jpg" alt="" /></a>
+         <h1>Información</h1>
+       </div>
+       <div class="container-table">
+           {% for i in tesoreria %}
+           <section id="formparcelas">
+               <form action="/editar/5/{{i.id}}" method="post" class="form">
+                      <fieldset>
+                          <h4>Descripción:</h4>
+                          <input type="text" name="descripcion" value="{{i.descripcion}}" required>
+
+                          <h4>Fecha:</h4>
+                          <input type="date" name="fecha" value="{{i.fecha}}" required>
+
+                          <h4>Concepto:</h4>
+                          <input type="text" name="concepto" placeholder="concepto" value="{{i.concepto}}">
+
+                          <h4>importe:</h4>
+                          <input type="number" name="importe" step="0.01" min="0" placeholder="importe" value="{{i.importe}}" required>
+
+                          <button type="submit">Guardar</button>
+                      </fieldset>
+               </form>
+           </section>
+           {%endfor%}
+       </div>
+    </div>
+  </body>
+  <script src="/static/script.js"></script>
+</html>
