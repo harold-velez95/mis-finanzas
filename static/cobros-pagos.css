@@ -4,17 +4,19 @@ body {
     background: #7F7FD5;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: center;
 
 }
 
 .container-main{
-    display:grid;
-    grid-template-columns: 1fr 2fr;
-    margin:20px auto;
+    display:flex;
     width: 90%;
-    max-width:1500px;
     padding: 40px auto;
     gap:12px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-login {
@@ -61,7 +63,7 @@ body {
     display:flex;
     justify-content: center;
     gap:20px;
-    padding: 20px;
+    margin: 20px;
 }
 
 .info,h2 {
@@ -108,33 +110,8 @@ a {
     color: CurrentColor;
 }
 
-@media(max-width: 650px){
-    .container-main {
-        display: grid;
-        grid-template-columns:1fr;
-    }
-    .container-tablet {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-    .info2 {
-    align-items:center;
-    justify-content:center;
-    display: flex;
-    width:500px;
-    }
-    .form input, .form select {
-    margin-bottom: 5px;
-    display: flex;
-    padding: 5px;
-    width:60px;
-    }
-
-
-img {
-    width: 90%;
+img{
+    max-width: 250px;
 }
 
 .container-tablet {
@@ -196,4 +173,11 @@ button {
     padding: 20px;
     width: 45%;
     text-align:center;
+}
+
+@media (max-width: 700px){
+    .container-main{
+        display: flex;
+        flex-direction: column;
+    }
 }

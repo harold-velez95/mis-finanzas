@@ -21,7 +21,7 @@
                 {{ cobros|round(2) }} €<br><br>
                 <h2>Diponible</h2>
                 <label>Existencias</label><br>
-                {{ tipo_concepto["corto_plazo"] }} €<br><br>
+                {{ tipo_concepto["corto_plazo"]|round(2) }} €<br><br>
                 <label>Efectivo</label><br>
                 {{ tesoreria['Efectivo']|round(2) }} €<br><br>
                 <label>Criptomonedas</label><br>
@@ -29,7 +29,7 @@
                 <label>Tarjetas</label><br>
                 {{ tesoreria['Tarjetas']|round(2) }} € <br><br>
                 <label>Total</label>
-                {{ tesoreria['Tarjetas'] + tesoreria['Bitcoin'] + tesoreria['Efectivo']+ cobros + tesoreria['Activos no corrientes'] + tipo_concepto["corto_plazo"] }} €
+                {{ (tesoreria['Tarjetas'] + tesoreria['Bitcoin'] + tesoreria['Efectivo']+ cobros + tesoreria['Activos no corrientes'] + tipo_concepto["corto_plazo"])|round(2) }} €
 
             </div>
             <div class="pasivos">

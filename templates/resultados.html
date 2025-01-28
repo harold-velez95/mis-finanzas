@@ -35,19 +35,19 @@
              {% if datos_financieros %}
              <div class="info-content">
                 <h2>Datos Financieros</h2><br>
-                <p><strong>Ventas Totales:</strong> {{ datos_financieros['ventas_totales'] }}</p>
-                <p><strong>Gastos Totales:</strong> {{ datos_financieros['gastos_totales'] }}</p>
-                <p><strong>Margen:</strong> {{ datos_financieros['margen'] }}</p>
-                <p><strong>Otras Entradas:</strong> {{ datos_financieros['otras_entradas'] }}</p>
-                <p><strong>Nómina:</strong> {{ datos_financieros['nomina'] }}</p>
-                <p><strong>Servicios:</strong> {{ datos_financieros['servicios'] }}</p>
-                <p><strong>Transporte:</strong> {{ datos_financieros['transporte'] }}</p>
-                <p><strong>Arriendo:</strong> {{ datos_financieros['Arriendo'] }}</p>
-                <p><strong>BAI (Beneficio Antes de Impuestos):</strong> {{ datos_financieros['bai'] }}</p>
-                <p><strong>Gestoría:</strong> {{ datos_financieros['gestoria'] }}</p>
-                <p><strong>Autónomo:</strong> {{ datos_financieros['autonomo'] }}</p>
-                <p><strong>Impuestos:</strong> {{ datos_financieros['impuestos'] }}</p>
-                <p><strong>Margen Neto:</strong> {{ datos_financieros['margen_neto'] }}</p>
+                <p><strong>Ventas Totales:</strong> {{ datos_financieros['ventas_totales']|round(2) }}</p>
+                <p><strong>Gastos Totales:</strong> {{ datos_financieros['gastos_totales']|round(2) }}</p>
+                <p><strong>Margen:</strong> {{ datos_financieros['margen']|round(2) }}</p>
+                <p><strong>Otras Entradas:</strong> {{ datos_financieros['otras_entradas']|round(2) }}</p>
+                <p><strong>Nómina:</strong> {{ datos_financieros['nomina']|round(2) }}</p>
+                <p><strong>Servicios:</strong> {{ datos_financieros['servicios'] |round(2)}}</p>
+                <p><strong>Transporte:</strong> {{ datos_financieros['transporte']|round(2) }}</p>
+                <p><strong>Arriendo:</strong> {{ datos_financieros['Arriendo']|round(2) }}</p>
+                <p><strong>BAI (Beneficio Antes de Impuestos):</strong> {{ datos_financieros['bai']|round(2) }}</p>
+                <p><strong>Gestoría:</strong> {{ datos_financieros['gestoria']|round(2) }}</p>
+                <p><strong>Autónomo:</strong> {{ datos_financieros['autonomo'] |round(2)}}</p>
+                <p><strong>Impuestos:</strong> {{ datos_financieros['impuestos']|round(2) }}</p>
+                <p><strong>Margen Neto:</strong> {{ datos_financieros['margen_neto']|round(2) }}</p>
              </div>
             <div>
                <h3>Generar Reporte</h3>
